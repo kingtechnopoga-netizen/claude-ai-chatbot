@@ -1,16 +1,17 @@
+import "./globals.css";
 export const metadata = {
-  title: 'Claude AI Chatbot',
-  description: 'AI Chatbot UI',
-}
+  title: "Neural Interface",
+  description: "Advanced AI Chatbot UI",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  )
+  );
 }
