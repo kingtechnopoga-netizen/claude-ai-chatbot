@@ -78,7 +78,7 @@ export default function Chat() {
     localStorage.removeItem("chat_history");
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
 
