@@ -294,10 +294,12 @@ function renderMessages() {
     if (!chat || chat.messages.length === 0) {
         els.welcome.classList.remove('hidden');
         els.messages.classList.remove('show');
+        els.app.classList.add('welcome-active');
         return;
     }
     els.welcome.classList.add('hidden');
     els.messages.classList.add('show');
+    els.app.classList.remove('welcome-active');
 
     chat.messages.forEach(m => appendMessage(m.role, m.content, m.image, { animate: false }));
     scrollToBottom(true);
@@ -476,6 +478,7 @@ async function handleSend() {
     // Render user message
     els.welcome.classList.add('hidden');
     els.messages.classList.add('show');
+    els.app.classList.remove('welcome-active');
     appendMessage('user', text, image);
 
     // Clear input
@@ -562,6 +565,7 @@ async function generateImage(prompt, chat) {
 
     els.welcome.classList.add('hidden');
     els.messages.classList.add('show');
+    els.app.classList.remove('welcome-active');
     appendMessage('user', userMsg.content);
     els.input.value = '';
     autoResize();
